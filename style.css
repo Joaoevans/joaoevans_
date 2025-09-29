@@ -11,11 +11,12 @@ body {
     align-items: center;
     min-height: 100vh;
     text-align: center;
+    
 }
 
 
 .profile-pic {
-    width: 120px;
+    width: 120px; 
     height: 120px;
     border-radius: 50%;
     object-fit: cover;
@@ -37,11 +38,12 @@ p.bio {
     padding: 0 20px;
 }
 
+
 .link-container {
     display: flex;
     align-items: center;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.034);
+    border: 1px solid rgba(0, 69, 219, 0.596);
     border-radius: 12px;
     padding: 14px 18px;
     width: 90%;
@@ -63,7 +65,8 @@ p.bio {
     height: 28px;
     margin-right: 15px;
 
-    filter: invert(1) brightness(0.75);
+    filter: invert(1) brightness(2);
+
     
 }
 
@@ -72,6 +75,77 @@ p.bio {
     font-size: 15px;
     font-weight: 600;
 }
+:root {
+  --background-dark: oklch(0.08 0 0); 
+  --background-card: oklch(0.12 0.02 250); 
+  --primary-blue: oklch(0.65 0.25 250); 
+}
+
+
+
+.particle-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; 
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  background-color: var(--primary-blue);
+  border-radius: 50%;
+  opacity: 0.3;
+  animation: float 6s ease-in-out infinite;
+}
+
+.particle:nth-child(1) {
+  width: 15px;
+  height: 15px;
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.particle:nth-child(2) {
+  width: 20px;
+  height: 20px;
+  top: 30%;
+  right: 15%;
+  animation-delay: 2s;
+}
+
+.particle:nth-child(3) {
+  width: 10px;
+  height: 10px;
+  bottom: 20%;
+  left: 25%;
+  animation-delay: 4s;
+}
+
+.particle:nth-child(4) {
+  width: 18px;
+  height: 18px;
+  bottom: 10%;
+  right: 5%;
+  animation-delay: 1s;
+}
+
+.particle:nth-child(5) {
+  width: 12px;
+  height: 12px;
+  top: 50%;
+  left: 5%;
+  animation-delay: 3s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
 
 @media (max-width: 480px) {
     h1 {
@@ -82,4 +156,7 @@ p.bio {
         font-size: 14px;
     }
 }
+
+
+
 
